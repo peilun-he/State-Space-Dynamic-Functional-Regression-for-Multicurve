@@ -329,7 +329,7 @@ kpca_machine <- sk_dec$KernelPCA(kernel = "rbf",
 set.seed(1234)
 grid_search <- sk_ms$GridSearchCV(kpca_machine, 
                                   param_grid, 
-                                  cv = as.integer(Q), scoring = score)
+                                  cv = as.integer(3), scoring = score)
 hp_fit <- grid_search$fit(t(as.matrix(dat_kpca))) # hyper-parameter 
 
 hp_fit$best_params_
